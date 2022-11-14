@@ -7,7 +7,8 @@ public class Main {
         WebDriverManager.chromedriver().setup();
         ChromeDriver driver = new ChromeDriver();
         driver.get("http://practice.bpbonline.com/");
-        Thread.sleep(5000);
+        driver.manage().window().maximize();
+        driver.navigate().to("http://www.selenium.dev");
         driver.close();
     }
 }
