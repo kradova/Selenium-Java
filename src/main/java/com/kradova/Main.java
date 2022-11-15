@@ -11,15 +11,15 @@ public class Main {
     public static void main(String[] args) throws Exception {
         WebDriverManager.chromedriver().setup();
         ChromeDriver driver = new ChromeDriver();
-        driver.get("http://practice.bpbonline.com/");
+        //driver.get("http://practice.bpbonline.com/");
+        driver.get("https://the-internet.herokuapp.com/checkboxes");
         driver.manage().window().maximize();
-        WebElement quickFind = driver.findElement(By.xpath("//input[@title = ' Quick Find ']"));
-        System.out.println(quickFind.getAttribute("alt"));
-        System.out.println(quickFind.getTagName());
-        System.out.println(quickFind.getText());
-        System.out.println(quickFind.getCssValue("background-color"));
-        System.out.println(quickFind.getSize().height);
-        System.out.println(quickFind.getRect().height);
+        WebElement firstCheckbox = driver.findElement(By.cssSelector("#checkboxes"));
+        System.out.println(firstCheckbox.isDisplayed());
+        System.out.println(firstCheckbox.isEnabled());
+        System.out.println(firstCheckbox.isSelected());
+        firstCheckbox.click();
+        System.out.println(firstCheckbox.isSelected());
         driver.close();
     }
 }
