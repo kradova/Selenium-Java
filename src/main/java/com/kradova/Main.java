@@ -13,10 +13,13 @@ public class Main {
         ChromeDriver driver = new ChromeDriver();
         driver.get("http://practice.bpbonline.com/");
         driver.manage().window().maximize();
-        List<WebElement> allLinks = driver.findElements(By.xpath("//a"));
-        for (WebElement lnk : allLinks) {
-            System.out.println(lnk.getText());
-        }
+        WebElement searchField = driver.findElement(By.name("keywords"));
+        searchField.clear();
+        searchField.sendKeys("mouse");
+        WebElement quickFind = driver.findElement(By.xpath("//input[@title = ' Quick Find ']"));
+        quickFind.click();
+
         driver.close();
     }
 }
+
