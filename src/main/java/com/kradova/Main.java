@@ -9,8 +9,10 @@ public class Main {
         ChromeDriver driver = new ChromeDriver();
 
 //        UserProfile.updateProfile(driver);
-        HtmlTable.checkTable(driver);
+//        HtmlTable.checkTable(driver);
+          Manufacturer.checkTable(driver);
     }
 }
+
 
 
